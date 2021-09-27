@@ -1,0 +1,35 @@
+#mission{
+    padding: 3.125rem 3.75rem;
+    padding-right: 3.125rem;
+    padding-top: 4%;
+    background-color: #D3D3D3;
+}
+#mission span{
+    font-size: 16.5625rem;
+    padding-left: 16.5625rem;
+    color: orangered;
+}
+#mission p{
+    font-size: larger;
+}
+
+.logosml{
+    font-size: 3.75rem;
+    color: orangered;
+}
+#srv p{
+    font-size: 2.25rem;
+}
+#srv{
+    padding: 6.25rem;
+}
+@media screen and (max-width: 450px) {
+
+    .logo{
+        font-size: 1px;
+        right: 50%;
+    }
+    #srv p{
+        font-size: 1.75rem;
+    }
+}

@@ -1,0 +1,25 @@
+#home{
+    /* border: 0.125rem solid black; */
+    background-image: url("../../images/bg.webp");
+    background-repeat: no-repeat; 
+    background-size: cover  ;
+    height: 110vh;
+    width: auto;
+}
+.jumbotron{
+    margin-top: 3.125rem;
+    padding-top: 0;
+    width: auto;
+    /* height: 100vh; */
+    background-color: transparent;
+    color: black;
+    margin-top: 15.625rem;
+    padding-right: 0.938rem;
+    /* background-image: url("img/bg.webp");
+    background-repeat: no-repeat; */
+}
+#title{
+    margin-top: 15.625rem;
+    background-color: orangered;
+    color: #fff;
+}
