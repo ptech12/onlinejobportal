@@ -8,7 +8,7 @@ export default function Contact() {
     const [mail, setMail] = useState("");
     // const [name, setName] = useState("")
     // Handle Send method
-    const handleSend = async() => {
+    const handleSend = async () => {
         setSent(true)
         try {
             await axios.post("http://localhost:4000/send", {
@@ -34,6 +34,7 @@ export default function Contact() {
                 <br />
                 <button type="submit" >Send</button>
             </form>
+            {sent ? alert('fone') : console.log("Wait") }
         </div>
     )
 }
