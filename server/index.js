@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // making mail script
-app.post("/send", cors(),  (req, res) => {
+app.post("/send", cors(), async (req, res) => {
     // let {text} = req.body;
     console.log(req.body);
     let transport = nodemailer.createTransport({
@@ -24,7 +24,7 @@ app.post("/send", cors(),  (req, res) => {
         }
     });
     const options = {
-            from: process.env.MAIL_FROM,
+            from: "sp@offcial.com",
             to: "test@test.com",
             subject: "Text Mail",
             html: `
@@ -41,7 +41,29 @@ app.post("/send", cors(),  (req, res) => {
             </div>
             `
         }
-    transport.sendMail({
+   
+    await transport.sendMail(options, (err, info) => {
+            if (err) {
+                console.log(err);
+            }
+            console.log("Info :", info);
+            res.json({
+                message: "Email successfully sent"
+            });
+        }
+    );
+
+    // Ack Mail Transporter
+     const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.MAIL_FROM,
+            pass: process.env.MAIL_FROM_PASS
+        }
+    }
+        
+    )
+    await transporter.sendMail({
         from:process.env.MAIL_FROM,
         to: req.body.email,
         subject: "Text Mail",
@@ -68,17 +90,6 @@ app.post("/send", cors(),  (req, res) => {
             });
         }
     )
-    transport.sendMail(options, (err, info) => {
-            if (err) {
-                console.log(err);
-            }
-            console.log("Info :", info);
-            res.json({
-                message: "Email successfully sent"
-            });
-        }
-    );
-
 
 })
 
