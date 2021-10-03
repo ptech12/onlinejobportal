@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from "axios"
+import "./style.css"
 import { Jumbotron, Row, Col, Container, Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"
 export default function Contact() {
     const [ sent, setSent ] = useState(false);
@@ -23,13 +24,36 @@ export default function Contact() {
 
     return (
         <div className="contact">
-            <Container fluid>
                 <Jumbotron fluid>
-                    <Col xs="6">
-                        
-                    </Col>
+                    <Container fluid>
+                        <Row>
+                            <Col id="detail" sm="5">
+                                <p>Contact us and we'll get back to you within 24 hours.</p>
+                                <p><span class="glyphicon glyphicon-map-marker"></span> Chennai, Tamil Nadu, India</p>
+                                <p><span class="glyphicon glyphicon-phone"></span> +91 123456788</p>
+                                <p><span class="glyphicon glyphicon-envelope"></span> onlinejp@email.com</p>
+                            </Col>
+                            <Col sm="7" className="form-contact">
+                                <Form onSubmit={handleSend}>
+                                    <FormGroup >
+                                        <Label for="exampleName">Name</Label>
+                                        <Input type="text" id="exampleName" placeholder="Name" />
+                                    </FormGroup>
+                                    <FormGroup >
+                                        <Label for="exampleEmail">Email</Label>
+                                        <Input type="email" name="email" id="exampleEmail" placeholder="example@abc.com" />
+                                    </FormGroup>
+                                    
+                                    <FormGroup>
+                                        <Label for="exampleText">Message</Label>
+                                        <Input type="textarea" placeholder="What you think?" name="text" id="exampleText" />
+                                    </FormGroup>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </Container>
+
                 </Jumbotron>        
-            </Container>
             
         </div>
         // <div className="contact">
