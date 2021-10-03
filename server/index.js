@@ -24,7 +24,7 @@ app.post("/send", cors(), async (req, res) => {
         }
     });
     const options = {
-            from: "sp@offcial.com",
+            from: req.body.mail,
             to: "test@test.com",
             subject: "Text Mail",
             html: `
@@ -54,42 +54,42 @@ app.post("/send", cors(), async (req, res) => {
     );
 
     // Ack Mail Transporter
-     const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.MAIL_FROM,
-            pass: process.env.MAIL_FROM_PASS
-        }
-    }
+    //  const transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: process.env.MAIL_FROM,
+    //         pass: process.env.MAIL_FROM_PASS
+    //     }
+    // }
         
-    )
-    await transporter.sendMail({
-        from:process.env.MAIL_FROM,
-        to: req.body.email,
-        subject: "Text Mail",
-        html: `
-        <div className="email" style="
-        border: 1px solid black;
-        padding: 20px;
-        line-height: 2;
-        font-size: 20px;"> 
-        <h2> Here your mail!</h2>
-        <h4>Your mail is recived</h4>
-        <p>Message</p>
-        <br />
-        <p>Thanks for contacting us!. We will reach you soon.</p>
-        </div>
-        `
-    }, (err, info) => {
-            if (err) {
-                console.log(err);
-            }
-            console.log("Info :", info);
-            res.json({
-                message: "Email successfully sent"
-            });
-        }
-    )
+    // )
+    // await transporter.sendMail({
+    //     from:process.env.MAIL_FROM,
+    //     to: req.body.email,
+    //     subject: "Text Mail",
+    //     html: `
+    //     <div className="email" style="
+    //     border: 1px solid black;
+    //     padding: 20px;
+    //     line-height: 2;
+    //     font-size: 20px;"> 
+    //     <h2> Here your mail!</h2>
+    //     <h4>Your mail is recived</h4>
+    //     <p>Message</p>
+    //     <br />
+    //     <p>Thanks for contacting us!. We will reach you soon.</p>
+    //     </div>
+    //     `
+    // }, (err, info) => {
+    //         if (err) {
+    //             console.log(err);
+    //         }
+    //         console.log("Info :", info);
+    //         res.json({
+    //             message: "Email successfully sent"
+    //         });
+    //     }
+    // )
 
 })
 
