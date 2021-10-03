@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios"
 import "./style.css"
-import { Jumbotron, Row, Col, Container, Button, Form, FormGroup, Label, Input, FormText } from "reactstrap"
+import { Jumbotron, Row, Col, Container, Button, Form, FormGroup, Label, Input } from "reactstrap"
 export default function Contact() {
     const [ sent, setSent ] = useState(false);
     const [text, setText] = useState("")
@@ -37,17 +37,18 @@ export default function Contact() {
                                 <Form onSubmit={handleSend}>
                                     <FormGroup >
                                         <Label for="exampleName">Name</Label>
-                                        <Input type="text" id="exampleName" placeholder="Name" />
+                                        <Input onChange={e => setName(e.target.value)} type="text" id="exampleName" placeholder="Name" />
                                     </FormGroup>
                                     <FormGroup >
                                         <Label for="exampleEmail">Email</Label>
-                                        <Input type="email" name="email" id="exampleEmail" placeholder="example@abc.com" />
+                                        <Input onChange={e => setMail(e.target.value)} type="email" name="email" id="exampleEmail" placeholder="example@abc.com" />
                                     </FormGroup>
                                     
                                     <FormGroup>
                                         <Label for="exampleText">Message</Label>
-                                        <Input type="textarea" placeholder="What you think?" name="text" id="exampleText" />
+                                        <Input onChange={(e) => setText(e.target.value)} type="textarea" placeholder="What you think?" name="text" id="exampleText" />
                                     </FormGroup>
+                                    <Button color="primary"> Submit </Button>
                                 </Form>
                             </Col>
                         </Row>
