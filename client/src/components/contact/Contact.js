@@ -20,6 +20,10 @@ export default function Contact() {
         } catch (err) {
             console.log(err);
         }
+        setSent(false)
+        setName("")
+        setMail("")
+        setMail("")
     }
 
     return (
@@ -34,7 +38,7 @@ export default function Contact() {
                                 <p><span class="glyphicon glyphicon-envelope"></span> onlinejp@email.com</p>
                             </Col>
                             <Col sm="7" className="form-contact">
-                                <Form onSubmit={handleSend}>
+                                <Form >
                                     <FormGroup >
                                         <Label for="exampleName">Name</Label>
                                         <Input onChange={e => setName(e.target.value)} type="text" id="exampleName" placeholder="Name" />
@@ -46,9 +50,9 @@ export default function Contact() {
                                     
                                     <FormGroup>
                                         <Label for="exampleText">Message</Label>
-                                        <Input onChange={(e) => setText(e.target.value)} type="textarea" placeholder="What you think?" name="text" id="exampleText" />
+                                        <Input value={text} onChange={(e) => setText(e.target.value)} type="textarea" placeholder="What you think?" name="text" id="exampleText" />
                                     </FormGroup>
-                                    <Button color="primary"> Submit </Button>
+                                    <Button onClick={handleSend} color="primary"> Submit </Button>
                                 </Form>
                             </Col>
                         </Row>
