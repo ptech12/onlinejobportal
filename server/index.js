@@ -5,7 +5,8 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const nodemailer = require('nodemailer');
-
+const mongoose = require("mongoose")
+const {MONGO_URL} = require('./keys')
 // USing Body Parser and cors
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -92,7 +93,21 @@ app.post("/send", cors(), async (req, res) => {
     // )
 
 })
+// connecting to mongoose
+mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
+// on successfull connection
+mongoose.connection.on("connected", () => console.log("Connection success"))
+
+// on not successfull connection
+mongoose.connection.on("error", () => console.log("error!! ")  )
+
+app.get("/", (res,  req) => {
+    res.send("Hello World")
+})
 // start up the server
 app.listen((process.env.PORT | 4000), ()=> {
     console.log("listening on 4000")
