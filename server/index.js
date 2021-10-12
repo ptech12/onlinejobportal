@@ -105,7 +105,7 @@ mongoose.connection.on("connected", () => console.log("Connection success"))
 // on not successfull connection
 mongoose.connection.on("error", () => console.log("error!! ")  )
 
-app.get("/", (res,  req) => {
+app.get("/", (req, res) => {
     res.send("Hello World")
 })
 // start up the server
