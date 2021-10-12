@@ -1,16 +1,35 @@
 const express = require('express');
 const app = express();
 require('dotenv').config();
-
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const nodemailer = require('nodemailer');
 const mongoose = require("mongoose")
 const {MONGO_URL} = require('./keys')
+require("./models/user")
+const mainRoutes = require("./Routes/routes")
+
 // USing Body Parser and cors
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 app.use(cors());
+app.use(express.json());
+
+app.use(mainRoutes)
+// connecting to mongoose
+mongoose.connect(MONGO_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+
+// on successfull connection
+mongoose.connection.on("connected", () => console.log("Connection success"))
+
+// on not successfull connection
+mongoose.connection.on("error", () => console.log("error!! ")  )
+
+app.get("/", (req, res) => {
+    res.send("Hello World")
+})
 
 // making mail script
 app.post("/send", cors(), async (req, res) => {
@@ -93,21 +112,7 @@ app.post("/send", cors(), async (req, res) => {
     // )
 
 })
-// connecting to mongoose
-mongoose.connect(MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
 
-// on successfull connection
-mongoose.connection.on("connected", () => console.log("Connection success"))
-
-// on not successfull connection
-mongoose.connection.on("error", () => console.log("error!! ")  )
-
-app.get("/", (req, res) => {
-    res.send("Hello World")
-})
 // start up the server
 app.listen((process.env.PORT | 4000), ()=> {
     console.log("listening on 4000")
