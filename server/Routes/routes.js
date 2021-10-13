@@ -8,14 +8,35 @@ router.get('/signup',(req,res)=>{
 })
 
 // addinng post requst to this route
-router.post('/signup', (req, res)=>{
-    let {name, email, password} = req.body;
-    console.log(req.body);
-    if (!email || !password || !name)
+router.post('/signup',(req,res)=>{
+    var {name,email,password}=req.body
+    console.log(req.body)
+    if(!email || !password || !name)
     {
-        return res.status(422).json({error: "Add all Data"})
+        return res.status(422).json({error:"Add all data"})
     }
-    return res.status(200).json({message: "DONE !"})
+    User.findOne({email:email})
+   .then((savedUser)=>{
+       if(savedUser){
+            return res.status(422).json({error:"User already exists with that email"})
+       }
+       const user=new User({
+        email,
+        password,
+        name,
+    })
+    user.save()
+    .then((user)=>{
+        res.json({message:"Saved Successfully"})
+        console.log(user.email)
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+.catch((err)=>{
+    console.log(err)
+})
 })
 
 module.exports=router
