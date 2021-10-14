@@ -1,10 +1,13 @@
 import React from 'react'
 import './style.css'
+import Navigation from '../Navbar/Navigation';
+
 export default function Home() {
 
     return (
         <>
-
+        <Navigation />
+        
         <div id="home" class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-lg-6 ">
