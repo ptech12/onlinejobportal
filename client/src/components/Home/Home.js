@@ -1,16 +1,17 @@
 import React from 'react'
 import './style.css'
-import Navigation from '../Navbar/Navigation';
 import Scrolltop from './scrollTop';
+import Navigation from '../Navbar/Navigation';
 
 export default function Home() {
 
     return (
         <>
-        <Navigation />
-        <Scrolltop />
+        
         
         <div id="home" class="container-fluid">
+            <Navigation />
+            <Scrolltop />
             <div class="row">
                 <div class="col-sm-6 col-lg-6 ">
                     <div id="title" class="jumbotron title text-center">
