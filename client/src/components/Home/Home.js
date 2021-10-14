@@ -1,7 +1,8 @@
 import React from 'react'
 import './style.css'
 import Navigation from '../Navbar/Navigation';
-
+import { Button } from "reactstrap"
+import { FaArrowCircleUp } from "react-icons/fa"
 export default function Home() {
 
     return (

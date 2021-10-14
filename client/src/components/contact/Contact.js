@@ -56,7 +56,7 @@ export default function Contact() {
                                 </Form>
                             </Col>
                         </Row>
-                        <Button onClick={() => window.scrollTo(0, 0)}> <span className="glyphicon glyphicon-chevron-up"></span> </Button>
+                        <Button color="primary" onClick={() => window.scrollTo(0, 0)}> <span className="glyphicon glyphicon-chevron-up"></span> </Button>
                     </Container>
 
                 </Jumbotron>        
