@@ -24,6 +24,7 @@ export default function Contact() {
         // setName("")
         // setMail("")
         // setMail("")
+        console.log(sent);
     }
 
     return (
