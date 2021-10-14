@@ -21,6 +21,12 @@ export default function Navigation( props ) {
                     <NavItem >
                         <NavLink className="item" href="#contact-id">Contact US</NavLink>
                     </NavItem>
+                    <NavItem >
+                        <NavLink className="item" href="/login">Login</NavLink>
+                    </NavItem>
+                    <NavItem >
+                        <NavLink className="item" href="/register">Register</NavLink>
+                    </NavItem>
 
                 </Nav>
             </Collapse>
