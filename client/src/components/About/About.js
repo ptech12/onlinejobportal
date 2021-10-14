@@ -1,5 +1,7 @@
 import React from 'react'
+import { FaGlobe, FaSignal } from 'react-icons/fa'
 import './style.css'
+// import { Fa-signal, Fa-FaGlobe} from 'react-icons/fa'
 export default function About() {
     return (
         <>
@@ -13,14 +15,16 @@ export default function About() {
                         </p>
                     </div>
                     <div id="abt-logo" class="col-sm-6">
-                        <span class="glyphicon glyphicon-signal logo"></span>
+                        <span class="logo"> <FaSignal /> </span>
+                        {/* <FaSignal className="logo"/> */}
                     </div>
                 </div>
             </div>
             <div id="mission" class="container-fluid">
                     <div class="row">
                         <div id="abt-logo" class="col-sm-6">
-                            <span class="glyphicon glyphicon-globe logo"></span>
+                            <span class="logo"> <FaGlobe /> </span>
+                            {/* <FaGlobe className="logo" /> */}
                         </div>
                         <div class="col-sm-6">
                             <h1>Our Mission</h1>

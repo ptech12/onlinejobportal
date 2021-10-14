@@ -24,10 +24,7 @@ const Scrolltop = () => {
 
     return (
         <div className="top-btn">
-            <Button onClick={scrollToTop} 
-     style={{display: vis ? 'inline' : 'none'}}>
-                    <FaArrowCircleUp  />
-            </Button>
+            <FaArrowCircleUp onClick={scrollToTop} style={{display: vis ? 'inline' : 'none'}} />
         </div>
     );
 }
