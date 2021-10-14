@@ -29,7 +29,7 @@ export default function Contact() {
     return (
         <div className="contact">
                 <Jumbotron fluid>
-                    <Container fluid>
+                    <Container fluid id="contact-id">
                         <Row>
                             <Col id="detail" sm="5">
                                 <p>Contact us and we'll get back to you within 24 hours.</p>
@@ -52,10 +52,11 @@ export default function Contact() {
                                         <Label for="exampleText">Message</Label>
                                         <Input value={text} onChange={(e) => setText(e.target.value)} type="textarea" placeholder="What you think?" name="text" id="exampleText" />
                                     </FormGroup>
-                                    <Button onClick={handleSend} color="primary"> Submit </Button>
+                                    <Button onClick={handleSend} color="primary"> Send <span className="glyphicon glyphicon-send"></span> </Button>
                                 </Form>
                             </Col>
                         </Row>
+                        <Button onClick={() => window.scrollTo(0, 0)}> <span className="glyphicon glyphicon-chevron-up"></span> </Button>
                     </Container>
 
                 </Jumbotron>        
