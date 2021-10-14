@@ -5,7 +5,7 @@ const Register = () => {
     // User State
     return (
         <div>
-            
+            <h1>Hello, /register here</h1>
         </div>
     );
 }
