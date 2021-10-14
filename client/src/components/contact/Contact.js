@@ -21,9 +21,9 @@ export default function Contact() {
             console.log(err);
         }
         setSent(false)
-        setName("")
-        setMail("")
-        setMail("")
+        // setName("")
+        // setMail("")
+        // setMail("")
     }
 
     return (
