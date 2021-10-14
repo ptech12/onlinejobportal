@@ -1,0 +1,17 @@
+#navbar {
+height: 80px;
+display: flex;
+background-color: transparent; 
+justify-content: center;
+align-items: center;
+position: sticky;
+top: 0;
+
+font-size: 2.0rem;
+/* border-bottom: 1px solid white;  */
+}
+.item{
+    color: black;
+    /* background-color: black; */
+
+}

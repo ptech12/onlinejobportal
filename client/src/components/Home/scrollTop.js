@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa';
-import { Button } from 'reactstrap';
 import './style.css'
 const Scrolltop = () => {
     const [vis, setVis] = useState(false)
