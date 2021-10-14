@@ -1,13 +1,14 @@
 import React from 'react'
 import './style.css'
 import Navigation from '../Navbar/Navigation';
-import { Button } from "reactstrap"
-import { FaArrowCircleUp } from "react-icons/fa"
+import Scrolltop from './scrollTop';
+
 export default function Home() {
 
     return (
         <>
         <Navigation />
+        <Scrolltop />
         
         <div id="home" class="container-fluid">
             <div class="row">
