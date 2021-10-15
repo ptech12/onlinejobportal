@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const nodemailer = require('nodemailer');
 const mongoose = require("mongoose")
+const path = require('path')
+const http = require('http')
 const {MONGO_URL} = require('./config/keys')
 require("./models/user")
 const mainRoutes = require("./Routes/routes")
@@ -32,15 +34,15 @@ mongoose.connection.on("error", () => console.log("error!! ")  )
 // })
 
 // Serve statics assests if it in production
-if ( process.env.NODE_ENV === 'production' )
-{
-    // set static folder
-    app.use("/static", express.static(path.join(__dirname, 'client/build')));
+// if ( process.env.NODE_ENV === 'production' )
+// {
+//     // set static folder
+//     app.use("/static", express.static(path.join(__dirname, 'client/build')));
     
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+//     app.get('*', (req, res) => {
+//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//     })
+// }
 
 
 
@@ -125,9 +127,16 @@ app.post("/send", cors(), async (req, res) => {
     // )
 
 })
+// serve the static assests
+app.use(express.static(path.join(__dirname, 'build')))
+const port = 8080 || process.env.PORT
+app.set('port', port);
+const server = http.createServer(app);
 
 // start up the server
-app.listen((process.env.PORT || 5000), ()=> {
-    console.log("listening on 5000")
-})
+server.listen(port, () => console.log("Server Running on " + port))
+
+// app.listen((process.env.PORT || 5000), ()=> {
+//     console.log("listening on 5000")
+// })
 
