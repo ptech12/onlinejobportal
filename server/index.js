@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require("cors");
 const nodemailer = require('nodemailer');
 const mongoose = require("mongoose")
-const {MONGO_URL} = require('./keys')
+const {MONGO_URL} = require('./config/keys')
 require("./models/user")
 const mainRoutes = require("./Routes/routes")
 
