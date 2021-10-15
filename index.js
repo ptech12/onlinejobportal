@@ -27,9 +27,9 @@ mongoose.connection.on("connected", () => console.log("Connection success"))
 // on not successfull connection
 mongoose.connection.on("error", () => console.log("error!! ")  )
 
-app.get("/", (req, res) => {
-    res.send("Hello World")
-})
+// app.get("/", (req, res) => {
+//     res.send("Hello World")
+// })
 
 // Serve statics assests if it in production
 if ( process.env.NODE_ENV === 'production' )
