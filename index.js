@@ -118,9 +118,9 @@ app.post("/send", cors(), async (req, res) => {
 })
 
 // start up the server
-server.listen(port, () => console.log("Server Running on " + port))
-
-// app.listen((process.env.PORT || 5000), ()=> {
-//     console.log("listening on 5000")
-// })
+// server.listen(port, () => console.log("Server Running on " + port))
+const PORT = process.env.PORT;
+app.listen(PORT, ()=> {
+    console.log(`listening on ${PORT}`)
+})
 
