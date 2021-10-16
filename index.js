@@ -10,6 +10,12 @@ require('dotenv').config({
 })
 
 const app = express();
+
+
+// use BOADYPARSER
+app.use(bodyParser.json())
+
+
 // config for dev
 if (process.env.NODE_ENV === 'development')
 {
@@ -22,12 +28,25 @@ if (process.env.NODE_ENV === 'development')
     app.use(morgan('dev'))
 
 }
+
+
+// Load All Routes
+const authRouter = require('./Routes/auth.routes')
+
+// USe Routes
+app.use('/api/', authRouter);
+
+
+
 app.use((req, res, next) => {
     res.status(404).json({
         success: false,
         message: "Page Not FOUND"
     })
 })
+
+
+
 // start up the server
 // server.listen(port, () => console.log("Server Running on " + port))
 const PORT = process.env.PORT;
