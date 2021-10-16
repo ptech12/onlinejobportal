@@ -1,12 +1,10 @@
 const express = require('express');
 const app = express();
-require('dotenv').config();
 const bodyParser = require('body-parser');
 const cors = require("cors");
 const nodemailer = require('nodemailer');
 const mongoose = require("mongoose")
-const path = require('path')
-const http = require('http')
+const morgan = require('morgan');
 const {MONGO_URL} = require('./config/keys')
 require("./models/user")
 const mainRoutes = require("./Routes/routes")
@@ -17,6 +15,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use(mainRoutes)
+// set .env to ./config/config.env
+
+require('dotenv').config({ path: "./config/config.env" });
 // connecting to mongoose
 mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
@@ -32,18 +33,6 @@ mongoose.connection.on("error", () => console.log("error!! ")  )
 // app.get("/", (req, res) => {
 //     res.send("Hello World")
 // })
-
-// Serve statics assests if it in production
-// if ( process.env.NODE_ENV === 'production' )
-// {
-//     // set static folder
-//     app.use("/static", express.static(path.join(__dirname, 'client/build')));
-    
-//     app.get('*', (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-//     })
-// }
-
 
 
 // making mail script
@@ -127,11 +116,6 @@ app.post("/send", cors(), async (req, res) => {
     // )
 
 })
-// serve the static assests
-app.use(express.static(path.join(__dirname, 'build')))
-const port = 8080 || process.env.PORT
-app.set('port', port);
-const server = http.createServer(app);
 
 // start up the server
 server.listen(port, () => console.log("Server Running on " + port))
