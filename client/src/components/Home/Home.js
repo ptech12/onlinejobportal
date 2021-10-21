@@ -2,12 +2,11 @@ import React from 'react'
 import './style.css'
 import Scrolltop from './scrollTop';
 import Navigation from '../Navbar/Navigation';
-
+// import { image } from '../../images/bg.webp'
 export default function Home() {
 
     return (
         <>
-        
         
         <div id="home" class="container-fluid">
             <Navigation />
@@ -15,6 +14,8 @@ export default function Home() {
             <div class="row">
                 <div class="col-sm-6 col-lg-6 ">
                     <div id="title" class="jumbotron title text-center">
+                        {/* <img src={image} alt="title" /> */}
+                        
                         <h1>Find your dream company</h1>
                     </div>
                 </div>
