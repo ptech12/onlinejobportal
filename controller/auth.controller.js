@@ -5,6 +5,7 @@ const { OAuth2Client } = require("google-auth-library")
 const fetch = require("node-fetch")
 const { validationResult } = require("express-validator")
 const jwt = require("jsonwebtoken")
+// create helpers dir
 const { errorHandler } = require("../helpers/dbErrorHandling")
 
 // exporting as name, email, password
