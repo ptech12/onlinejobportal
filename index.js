@@ -4,7 +4,7 @@ const cors = require("cors");
 const morgan = require('morgan');
 const connectDB = require('./config/db')
 
-
+// const _ = require('lodash')
 // configuration from .env to ./config/config.env
 require('dotenv').config({
     path: "./config/config.env"
