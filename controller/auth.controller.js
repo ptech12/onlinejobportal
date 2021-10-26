@@ -9,6 +9,8 @@ const jwt = require("jsonwebtoken")
 const { errorHandler } = require("../helpers/dbErrorHandling")
 // using sendgrid for sending mail. nodemailer also works
 const sgMail = require('@sendgrid/mail')
+// importing user
+const { User } = require("../models/auth.models")
 sgMail.setApiKey(process.env.MAIL_KEY)
 
 
