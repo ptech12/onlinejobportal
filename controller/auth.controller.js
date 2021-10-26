@@ -9,7 +9,7 @@ const jwt = require("jsonwebtoken")
 const { errorHandler } = require("../helpers/dbErrorHandling")
 // using sendgrid for sending mail. nodemailer also works
 const sgMail = require('@sendgrid/mail')
-
+sgMail.setApiKey(process.env.MAIL_KEY)
 
 
 // exporting as name, email, password
@@ -58,6 +58,16 @@ exports.registerController = (req, res) => {
                 <p>${process.env.CLIENT_URL}</p>
            `
        }
+
+       sgMail.send(emailData).then(sent => {
+           return res.json({
+               message: `Email has been sent t ${email}`
+           }).catch(err => {
+               return res.status(400).json({
+                   error: errorHandler(err) 
+               })
+           })
+       })
     
     }
 }
