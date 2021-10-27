@@ -23,7 +23,7 @@ exports.registerController = (req, res) => {
     if (!errors.isEmpty()){
         const firstError = errors.array().map(error => error.msg)[0]
         return res.status(422).json({
-            error: firstError
+            errors: firstError
         })
     }else{
         
@@ -33,7 +33,7 @@ exports.registerController = (req, res) => {
             // if user exist
             if (user){
                 return res.status(400).json({
-                    error: "Email is Taken"
+                    errors: "Email is Taken"
                 })
             }
        })
@@ -46,14 +46,14 @@ exports.registerController = (req, res) => {
            },
            process.env.JWT_ACCOUNT_ACTIVATION,
            {
-               expiresIn: '15m'
+               expiresIn: '5m'
            }
        )
 
        // Email data sending
        const emailData = {
            from: process.env.EMAIL_FROM,
-           to: to,
+           to: email,
            subject:"Account Activation link",
            html:`
                 <h1>Please Click link to activate </h1>
@@ -64,10 +64,10 @@ exports.registerController = (req, res) => {
 
        sgMail.send(emailData).then(sent => {
            return res.json({
-               message: `Email has been sent t ${email}`
+               message: `Email has been sent to ${email}`
            }).catch(err => {
                return res.status(400).json({
-                   error: errorHandler(err) 
+                   errors: errorHandler(err) 
                })
            })
        })
