@@ -26,6 +26,7 @@ exports.registerController = (req, res) => {
             error: firstError
         })
     }else{
+        
         User.findOne({
             email
         }).exec((err, user) => {

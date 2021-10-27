@@ -7,7 +7,7 @@ const connectDB = require('./config/db')
 // const _ = require('lodash')
 // configuration from .env to ./config/config.env
 require('dotenv').config({
-    path: "./config/config.env"
+    path: "./config/.env"
 })
 
 
