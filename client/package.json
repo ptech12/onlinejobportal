@@ -10,15 +10,20 @@
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.4",
     "bootstrap": "^5.1.1",
+    "js-cookie": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.1",
     "popper": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-facebook-login": "^4.1.1",
     "react-file-base64": "^1.0.3",
+    "react-google-login": "^5.2.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.4",
+    "react-toastify": "^8.0.3",
     "reactstrap": "^8.10.0",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
@@ -28,10 +33,10 @@
     "start": "react-scripts start",
     "build": "NODE_PATH=src react-scripts build",
     "predeploy": "npm run build",
-    "deploy" : "gh-pages -d build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client  "
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client  "
   },
   "eslintConfig": {
     "extends": [
