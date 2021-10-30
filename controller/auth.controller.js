@@ -8,10 +8,12 @@ const jwt = require("jsonwebtoken")
 // custom err handler for db errors
 const { errorHandler } = require("../helpers/dbErrorHandling")
 // using sendgrid for sending mail. nodemailer also works
-const sgMail = require('@sendgrid/mail')
+// const sgMail = require('@sendgrid/mail')
+// using nodemailer
+const nodemailer = require("nodemailer")
 // importing user
-const { User } = require("../models/auth.models")
-sgMail.setApiKey(process.env.MAIL_KEY)
+const User = require("../models/auth.models")
+// sgMail.setApiKey(process.env.MAIL_KEY)
 
 
 // exporting as name, email, password
@@ -26,17 +28,25 @@ exports.registerController = (req, res) => {
             errors: firstError
         })
     }else{
-        
         User.findOne({
-            email
+            email: email,
         }).exec((err, user) => {
-            // if user exist
             if (user){
                 return res.status(400).json({
                     errors: "Email is Taken"
                 })
             }
-       })
+        })
+    //     User.findOne({
+    //         email
+    //     }).exec((err, user) => {
+    //         // if user exist
+    //         if (user){
+    //             return res.status(400).json({
+    //                 errors: "Email is Taken"
+    //             })
+    //         }
+    //    })
        // Generate TOKEN
        const token = jwt.sign(
            {
@@ -61,16 +71,34 @@ exports.registerController = (req, res) => {
                 <p>${process.env.CLIENT_URL}</p>
            `
        }
-
-       sgMail.send(emailData).then(sent => {
-           return res.json({
-               message: `Email has been sent to ${email}`
-           }).catch(err => {
-               return res.status(400).json({
-                   errors: errorHandler(err) 
-               })
-           })
-       })
+       let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: process.env.MAIL_FROM,
+            pass: prcoess.env.MAIL_FROM_PASS
+        }
+        });
+        
+        transporter.sendMail(emailData, function(err, info){
+            if (err){
+                console.log(err);
+            }
+            else{
+                console.log(info.response)
+                // return res.status(400).json({
+                //     errors: errorHandler(err)
+                // })
+            }
+        })
+    //    sgMail.send(emailData).then(sent => {
+    //        return res.json({
+    //            message: `Email has been sent to ${email}`
+    //        }).catch(err => {
+    //            return res.status(400).json({
+    //                errors: errorHandler(err) 
+    //            })
+    //        })
+    //    })
     
     }
 }
