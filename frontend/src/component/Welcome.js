@@ -35,8 +35,14 @@ export const ErrorPage = (props) => {
       style={{ padding: "30px", minHeight: "93vh" }}
     >
       <Grid item>
-        <Typography variant="h2">Error 404</Typography>
+        <Typography variant="h2">Welcome to Job Portal</Typography>
+        
       </Grid>
+      
+      
+      <Button variant="contained" color="primary" href="/home">See Jobs</Button>
+
+      {/* <button>See Jobs</button> */}
     </Grid>
   );
 };
