@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Button } from "@material-ui/core";
 import { useState } from 'react';
 
 const Welcome = (props) => {
@@ -13,7 +13,13 @@ const Welcome = (props) => {
     >
       <Grid item>
         <Typography variant="h2">Welcome to Job Portal</Typography>
+        
       </Grid>
+      
+      
+      <Button variant="contained" color="primary" href="/home">See Jobs</Button>
+
+      {/* <button>See Jobs</button> */}
     </Grid>
   );
 };
