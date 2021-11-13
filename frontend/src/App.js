@@ -17,7 +17,10 @@ import AcceptedApplicants from "./component/recruiter/AcceptedApplicants";
 import RecruiterProfile from "./component/recruiter/Profile";
 import MessagePopup from "./lib/MessagePopup";
 import isAuth, { userType } from "./lib/isAuth";
+// axios
+import axios from "axios";
 
+axios.defaults.baseURL = "https://arcane-earth-24198.herokuapp.com/"
 const useStyles = makeStyles((theme) => ({
   body: {
     display: "flex",
