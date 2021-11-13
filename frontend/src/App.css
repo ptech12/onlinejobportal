@@ -1,0 +1,8 @@
+.nav-item .item{
+    color: #000;
+}
+
+.item :hover{
+    color: red !important;
+
+}
