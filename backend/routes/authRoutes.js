@@ -66,6 +66,7 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/login", (req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
   passport.authenticate(
     "local",
     { session: false },

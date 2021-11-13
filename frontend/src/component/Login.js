@@ -92,7 +92,7 @@ const Login = (props) => {
             severity: "error",
             message: err.response.data.message,
           });
-          console.log(err.response);
+          // console.log(err.response);
         });
     } else {
       setPopup({

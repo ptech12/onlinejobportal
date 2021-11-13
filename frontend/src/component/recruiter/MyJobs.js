@@ -12,7 +12,6 @@ import {
   Modal,
   Slider,
   FormControlLabel,
-  FormGroup,
   MenuItem,
   Checkbox,
 } from "@material-ui/core";
@@ -733,7 +732,7 @@ const MyJobs = (props) => {
         `salaryMin=${searchOptions.salary[0] * 1000}`,
       ];
     }
-    if (searchOptions.salary[1] != 100) {
+    if (searchOptions.salary[1] !== 100) {
       searchParams = [
         ...searchParams,
         `salaryMax=${searchOptions.salary[1] * 1000}`,

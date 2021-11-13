@@ -1,4 +1,4 @@
-export const server = "https://arcane-earth-24198.herokuapp.com/";
+export const server = "https://arcane-earth-24198.herokuapp.com";
 
 const apiList = {
   login: `${server}/auth/login`,
