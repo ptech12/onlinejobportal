@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/onlinejobportal/static/css/main.2ae47eeb.chunk.css",
-    "main.js": "/onlinejobportal/static/js/main.abd2fb26.chunk.js",
-    "main.js.map": "/onlinejobportal/static/js/main.abd2fb26.chunk.js.map",
+    "main.js": "/onlinejobportal/static/js/main.53fcc084.chunk.js",
+    "main.js.map": "/onlinejobportal/static/js/main.53fcc084.chunk.js.map",
     "runtime-main.js": "/onlinejobportal/static/js/runtime-main.29bc3ad0.js",
     "runtime-main.js.map": "/onlinejobportal/static/js/runtime-main.29bc3ad0.js.map",
     "static/css/2.3903dc47.chunk.css": "/onlinejobportal/static/css/2.3903dc47.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.3903dc47.chunk.css",
     "static/js/2.e5e9d744.chunk.js",
     "static/css/main.2ae47eeb.chunk.css",
-    "static/js/main.abd2fb26.chunk.js"
+    "static/js/main.53fcc084.chunk.js"
   ]
 }
