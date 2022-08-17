@@ -22,7 +22,7 @@ import { userType } from "./lib/isAuth";
 import axios from "axios";
 
 // axios.defaults.baseURL = "https://jobportal-b.web.app/";
-axios.defaults.baseURL = "https://ptech12.github.io/";
+axios.defaults.baseURL = "https://ptech12.github.io/onlinejobportal/";
 
 const useStyles = makeStyles((theme) => ({
   body: {
