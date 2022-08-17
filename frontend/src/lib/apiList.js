@@ -1,4 +1,4 @@
-export const server = " https://onlinejobportal616.web.app";
+export const server = "https://onlinejobportal-backend.herokuapp.com";
 
 const apiList = {
   login: `${server}/auth/login`,

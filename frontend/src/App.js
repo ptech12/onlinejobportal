@@ -21,8 +21,7 @@ import { userType } from "./lib/isAuth";
 // axios
 import axios from "axios";
 
-// axios.defaults.baseURL = "https://jobportal-b.web.app/";
-axios.defaults.baseURL = "https://ptech12.github.io/onlinejobportal/";
+axios.defaults.baseURL = "/";
 
 const useStyles = makeStyles((theme) => ({
   body: {

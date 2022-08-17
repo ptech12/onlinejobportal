@@ -23,6 +23,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import FilterListIcon from "@material-ui/icons/FilterList";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import  CircularProgress from '@material-ui/core/CircularProgress';
 
 import { SetPopupContext } from "../../App";
 
@@ -852,7 +853,7 @@ const MyJobs = (props) => {
             })
           ) : (
             <Typography variant="h5" style={{ textAlign: "center" }}>
-              No jobs found
+              No jobs found <CircularProgress color="inherit" />
             </Typography>
           )}
         </Grid>
