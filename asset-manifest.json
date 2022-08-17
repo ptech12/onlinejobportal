@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/onlinejobportal/static/css/main.2ae47eeb.chunk.css",
+    "main.js": "/onlinejobportal/static/js/main.842a3464.chunk.js",
+    "main.js.map": "/onlinejobportal/static/js/main.842a3464.chunk.js.map",
+    "runtime-main.js": "/onlinejobportal/static/js/runtime-main.29bc3ad0.js",
+    "runtime-main.js.map": "/onlinejobportal/static/js/runtime-main.29bc3ad0.js.map",
+    "static/css/2.3903dc47.chunk.css": "/onlinejobportal/static/css/2.3903dc47.chunk.css",
+    "static/js/2.e5e9d744.chunk.js": "/onlinejobportal/static/js/2.e5e9d744.chunk.js",
+    "static/js/2.e5e9d744.chunk.js.map": "/onlinejobportal/static/js/2.e5e9d744.chunk.js.map",
+    "static/js/3.d6e65145.chunk.js": "/onlinejobportal/static/js/3.d6e65145.chunk.js",
+    "static/js/3.d6e65145.chunk.js.map": "/onlinejobportal/static/js/3.d6e65145.chunk.js.map",
+    "index.html": "/onlinejobportal/index.html",
+    "static/css/2.3903dc47.chunk.css.map": "/onlinejobportal/static/css/2.3903dc47.chunk.css.map",
+    "static/css/main.2ae47eeb.chunk.css.map": "/onlinejobportal/static/css/main.2ae47eeb.chunk.css.map",
+    "static/js/2.e5e9d744.chunk.js.LICENSE.txt": "/onlinejobportal/static/js/2.e5e9d744.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29bc3ad0.js",
+    "static/css/2.3903dc47.chunk.css",
+    "static/js/2.e5e9d744.chunk.js",
+    "static/css/main.2ae47eeb.chunk.css",
+    "static/js/main.842a3464.chunk.js"
+  ]
+}
